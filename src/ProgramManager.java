@@ -5,12 +5,12 @@ import static org.lwjgl.opengl.GL.*;
 
 public class ProgramManager {
     long window;
-    FiguresManagement manager = new FiguresManagement();
-    InputLayout input = new InputLayout();
+    EffectManager manager = new EffectManager();
+    EffectDetailsController input = new EffectDetailsController();
 
     void init() {
         startWindow();
-        input.setManager(manager);
+        input.setParentEffectManager(manager);
         while(!glfwWindowShouldClose(window))
             programLoop();
         System.exit(0);

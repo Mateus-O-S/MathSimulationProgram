@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.function.Function;
 
 public class Effect {
-    ArrayList<Point> points = new ArrayList<>();
+    ArrayList<Particle> points = new ArrayList<>();
     public float radioCorrection = 0;
     public Gradient color = new Gradient(new float[]{1, 0, 0}, new float[]{0, 1, 0});
     Timer timer = new Timer();
@@ -15,14 +15,14 @@ public class Effect {
     void start(float number) {
         points.clear();
         for (int i = 0; i < number; i++) {
-            Point.COLOR = color.get(i / number);
+            Particle.COLOR = color.get(i / number);
             add(i / number + radioCorrection);
         }
     }
 
 
     void add(double radio) {
-        Point point = new Point();
+        Particle point = new Particle();
         point.radio = (float)radio;
         points.add(point);
     }
@@ -33,7 +33,7 @@ public class Effect {
         }
     }
 
-    Function<Double, Double> getUpdaterFunctionByName(Point point) {
+    Function<Double, Double> getUpdaterFunctionByName(Particle point) {
         return switch (updationName) {
             case "-" -> time -> {
                 return point.radio - (time * point.velocity);

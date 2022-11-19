@@ -5,7 +5,7 @@ import static org.lwjgl.opengl.GL11.*;
 public class Particle {
     static float[] COLOR = {0.5f, 1, 1};
     static final float velocity = 0.1f;
-    static final float size = 0.005f;
+    static final float size = 0.002f;
     private final float[] color = COLOR;
     public float radio = 1f;
     private double x = 0;

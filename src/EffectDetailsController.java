@@ -50,7 +50,7 @@ public class EffectDetailsController implements ActionListener {
         EffectManager.color = new Gradient(color1, color2);
         EffectManager.radioCorrection = Integer.parseInt(this.radioCorrection.getText());
         parentManager.effect.updationName = effectTag.getText();
-        parentManager.start(10000);
+        parentManager.start(50000);
     }
 
     public void setParentEffectManager(EffectManager manager) {

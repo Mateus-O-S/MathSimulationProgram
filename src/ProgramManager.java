@@ -18,7 +18,7 @@ public class ProgramManager {
 
     void startWindow() {
         glfwInit();
-        window = glfwCreateWindow(600, 600, "", 0, 0);
+        window = glfwCreateWindow(900, 900, "", 0, 0);
         glfwShowWindow(window);
         glfwMakeContextCurrent(window);
         createCapabilities();
